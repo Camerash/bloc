@@ -56,7 +56,6 @@ void main() {
           });
           return PostBloc(httpClient: httpClient);
         },
-        wait: const Duration(milliseconds: 500),
         act: (bloc) => bloc.add(PostFetched()),
         expect: () => const <PostState>[
           PostState(
@@ -78,7 +77,6 @@ void main() {
           );
           return PostBloc(httpClient: httpClient);
         },
-        wait: const Duration(milliseconds: 500),
         act: (bloc) => bloc.add(PostFetched()),
         expect: () => <PostState>[const PostState(status: PostStatus.failure)],
         verify: (_) {
@@ -99,7 +97,6 @@ void main() {
           status: PostStatus.success,
           posts: mockPosts,
         ),
-        wait: const Duration(milliseconds: 500),
         act: (bloc) => bloc.add(PostFetched()),
         expect: () => const <PostState>[
           PostState(
@@ -129,7 +126,6 @@ void main() {
           status: PostStatus.success,
           posts: mockPosts,
         ),
-        wait: const Duration(milliseconds: 500),
         act: (bloc) => bloc.add(PostFetched()),
         expect: () => <PostState>[
           PostState(

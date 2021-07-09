@@ -144,9 +144,9 @@ If we cannot retrieve the posts, we throw an exception and `yield` `PostFailure(
 
 If we can retrieve the posts, we return `PostSuccess()` which takes the entire list of posts.
 
-One optimization we can make is to `debounce` the `Events` in order to prevent spamming our API unnecessarily. We can do this by overriding the `transform` method in our `PostBloc`.
+One optimization we can make is to `throttle` the `Events` in order to prevent spamming our API unnecessarily. We can do this by overriding the `transform` method in our `PostBloc`.
 
-?> **Note:** Overriding transform allows us to transform the Stream<Event> before mapEventToState is called. This allows for operations like distinct(), debounceTime(), etc... to be applied.
+?> **Note:** Overriding transform allows us to transform the Stream<Event> before mapEventToState is called. This allows for operations like distinct(), throttleTime(), etc... to be applied.
 
 [post_bloc.dart](_snippets/flutter_infinite_list_tutorial/post_bloc_transform_events.dart.md ':include')
 
